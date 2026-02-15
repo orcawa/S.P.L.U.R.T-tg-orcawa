@@ -290,7 +290,7 @@
 			/*
 			seed = new planted_seed.type(null)
 			*/
-			if(istype(seed, /obj/item/seeds/random))
+			if(istype(planted_seed, /obj/item/seeds/random))
 				seed = new planted_seed.type
 			else
 				seed = planted_seed.Copy()
