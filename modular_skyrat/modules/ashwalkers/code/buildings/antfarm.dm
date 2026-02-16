@@ -82,11 +82,20 @@
 	if(istype(attacking_item, /obj/item/storage/bag/plants))
 		balloon_alert(user, "feeding the ants")
 		var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/primitive, SKILL_SPEED_MODIFIER)
-		for(var/obj/item/food/selected_food in attacking_item.contents)
+		while(length(attacking_item.contents) > 0)
+			var/obj/item/food/target_food = locate() in attacking_item
+			if(isnull(target_food))
+				balloon_alert(user, "no food!")
+				break
 			if(!do_after(user, 1 SECONDS * skill_modifier, src))
 				return
 
-			qdel(selected_food)
+			if(QDELETED(target_food))
+				target_food = locate() in attacking_item
+				if(isnull(target_food))
+					balloon_alert(user, "no food!")
+					return
+			qdel(target_food)
 			user.mind.adjust_experience(/datum/skill/primitive, 5)
 			ant_chance++
 			if(prob(user.mind.get_skill_modifier(/datum/skill/primitive, SKILL_PROBS_MODIFIER)))
