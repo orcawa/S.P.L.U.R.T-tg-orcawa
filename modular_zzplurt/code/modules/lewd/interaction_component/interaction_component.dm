@@ -280,8 +280,19 @@
 		attributes += "are clothed"
 
 	// Genital checks
+	var/target_sheath = target.get_organ_slot(ORGAN_SLOT_PENIS).sheath
 	if(target.has_penis(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a penis"
+		switch(target_sheath)
+			if(SHEATH_NONE)
+				attributes += "have a penis"
+			if (SHEATH_NORMAL)
+				attributes += "have a sheath"
+			if (SHEATH_SLIT)
+				attributes += "have a slit"
+		if (target_sheath != SHEATH_NONE)
+			if (target.arousal_status != AROUSAL_NONE)
+				attributes += "have a penis"
+
 	/* Not implemented yet
 	if(target.has_strapon(REQUIRE_GENITAL_EXPOSED))
 		attributes += "have a strapon"

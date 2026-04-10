@@ -196,6 +196,90 @@
 	user_arousal = 20
 	target_arousal = 5
 
+/datum/interaction/lewd/sheathfuck
+	name = "Sheath Fuck"
+	description = "Fuck their sheath."
+	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
+	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
+	cum_target = list(CLIMAX_POSITION_USER = SHEATH, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
+	cum_message_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%CUMMING% cums inside %CAME_IN%'s sheath.",
+			"%CUMMING% shoots their load inside %CAME_IN%'s sheath.",
+			"%CUMMING% pumps their load into %CAME_IN%'s sheath."
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	cum_self_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"you cum inside %CAME_IN%'s sheath.",
+			"you shoot your load inside %CAME_IN%'s sheath.",
+			"you pump your load into %CAME_IN%'s sheath.",
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	cum_partner_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%CUMMING% cums inside your sheath.",
+			"%CUMMING% shoots their load inside your sheath.",
+			"%CUMMING% pumps their load into your sheath.",
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	message = list(
+		"fucks %TARGET%'s sheath.",
+		"presses their cock into %TARGET%'s sheath.",
+		"pushes inside of %TARGET%'s sheath."
+	)
+	sound_use = TRUE
+	user_pleasure = 8
+	target_pleasure = 4
+	user_arousal = 12
+	target_arousal = 10
+	target_pain = 4
+
+/datum/interaction/lewd/slit
+	name = "Slit Fuck"
+	description = "Fuck their slit."
+	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
+	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
+	cum_target = list(CLIMAX_POSITION_USER = SHEATH, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
+	cum_message_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%CUMMING% cums inside %CAME_IN%'s slit.",
+			"%CUMMING% shoots their load inside %CAME_IN%'s slit.",
+			"%CUMMING% pumps their load into %CAME_IN%'s slit."
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	cum_self_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"you cum inside %CAME_IN%'s slit.",
+			"you shoot your load inside %CAME_IN%'s slit.",
+			"you pump your load into %CAME_IN%'s slit.",
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	cum_partner_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%CUMMING% cums inside your slit.",
+			"%CUMMING% shoots their load inside your slit.",
+			"%CUMMING% pumps their load into your slit.",
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	message = list(
+		"fucks %TARGET%'s slit.",
+		"presses their cock into %TARGET%'s slit.",
+		"pushes inside of %TARGET%'s slit."
+	)
+	sound_use = TRUE
+	user_pleasure = 8
+	target_pleasure = 3
+	user_arousal = 12
+	target_arousal = 8
+	target_pain = 4
+
 /datum/interaction/lewd/cockfuck
 	name = "Cockfuck"
 	description = "Fuck their cock."

@@ -71,3 +71,46 @@
 	sound_use = TRUE
 	user_pleasure = 3
 	user_arousal = 5
+
+/datum/interaction/lewd/fingersheath
+	name = "Finger Sheath (self)"
+	description = "Finger their sheath."
+	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
+	target_required_parts = list(sheath = REQUIRE_GENITAL_EXPOSED)
+	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
+	message = list(
+		"fingers their sheath",
+		"fingers their sheath hard"
+	)
+	sound_possible = list(
+		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
+	)
+	sound_range = 1
+	sound_use = TRUE
+	user_pleasure = 0
+	target_pleasure = 3
+	user_arousal = 3
+	target_arousal = 5
+	target_pain = 2
+
+/datum/interaction/lewd/fingerslit
+	name = "Finger Slit (self)"
+	description = "Finger their slit."
+	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
+	target_required_parts = list(sheath = REQUIRE_GENITAL_EXPOSED)
+	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
+	message = list(
+		"fingers their slit",
+		"fingers themself",
+		"fingers their slit hard"
+	)
+	sound_possible = list(
+		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
+	)
+	sound_range = 1
+	sound_use = TRUE
+	user_pleasure = 0
+	target_pleasure = 3
+	user_arousal = 3
+	target_arousal = 5
+	target_pain = 2
